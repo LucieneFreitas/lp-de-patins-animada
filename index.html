@@ -13,115 +13,183 @@
     />
   </head>
   <body>
-    <header class="top">
-      <a href="#">
-        <img src="assets/logo.svg" alt="" />
-      </a>
-      <a href="#">
+    <!-- =========================
+     HEADER / TOPO DO SITE
+     Logo + Carrinho
+========================= -->
+<header class="top">
+  <!-- Logo -->
+  <a href="#">
+    <img src="assets/logo.svg" alt="Logo Snitap" />
+  </a>
+
+  <!-- Carrinho de compras -->
+  <a href="#">
+    <img src="assets/icons/shopping-bag.svg" alt="Carrinho" />
+    <span>1</span>
+  </a>
+</header>
+
+<!-- =========================
+     HERO SECTION
+     Headline + CTA + Imagem
+========================= -->
+<section class="hero">
+
+  <!-- Conteúdo textual do hero -->
+  <div>
+    <!-- Título principal com animação de palavras -->
+    <h1>
+      Snitap, sua vida mais
+      <div>
+        <span>radical</span>
+        <span>divertida</span>
+        <span>saudável</span>
+        <span>radical</span>
+      </div>
+    </h1>
+
+    <!-- Botões de ação -->
+    <div class="buttons">
+      <!-- Botão Comprar -->
+      <a href="#" class="button buy shadow">
         <img src="assets/icons/shopping-bag.svg" alt="" />
-        <span>1</span>
+        COMPRAR AGORA
       </a>
-    </header>
 
-    <section class="hero">
-      <div>
-        <h1>
-          Snitap, sua vida mais
-          <div>
-            <span>radical</span>
-            <span>divertida</span>
-            <span>saudável</span>
-            <span>radical</span>
-          </div>
-        </h1>
+      <!-- Botão Play -->
+      <a href="#" class="button play">
+        <span class="shadow">
+          <img src="assets/icons/play.svg" alt="" />
+        </span>
+        VEJA EM AÇÃO
+      </a>
+    </div>
+  </div>
 
-        <div class="buttons">
-          <a href="#" class="button buy shadow">
-            <img src="assets/icons/shopping-bag.svg" alt="" />
-            COMPRAR AGORA
-          </a>
+  <!-- Conteúdo visual do hero -->
+  <div>
+    <div class="content">
+      <img src="assets/hero/ellipse.svg" alt="" />
+      <img src="assets/hero/patins-image.png" alt="" />
+      <img src="assets/hero/stars-1.svg" alt="" />
+      <img src="assets/hero/stars-2.svg" alt="" />
+    </div>
+  </div>
+</section>
 
-          <a href="#" class="button play">
-            <span class="shadow">
-              <img src="assets/icons/play.svg" alt="" />
-            </span>
-            VEJA EM AÇÃO
-          </a>
-        </div>
-      </div>
+<!-- =========================
+     BANNER ANIMADO / MARQUEE
+========================= -->
+<section class="banner">
+  <div class="scroller bg-gradient-animate">
+    <div class="rolling">
+      <!-- Repetição para efeito de rolagem contínua -->
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+      <img src="assets/banner.svg" alt="" />
+    </div>
+  </div>
+</section>
 
-      <div>
-        <div class="content">
-          <img src="assets/hero/ellipse.svg" alt="" />
-          <img src="assets/hero/patins-image.png" alt="" />
-          <img src="assets/hero/stars-1.svg" alt="" />
-          <img src="assets/hero/stars-2.svg" alt="" />
-        </div>
-      </div>
-    </section>
+<!-- =========================
+     GALERIA DE FOTOS
+========================= -->
+<section class="gallery">
 
-    <section class="banner">
-      <div class="scroller bg-gradient-animate">
-        <div class="rolling">
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-          <img src="assets/banner.svg" alt="" />
-        </div>
-      </div>
-    </section>
+  <!-- Cabeçalho da galeria -->
+  <header>
+    <span>GALERIA DE FOTOS</span>
+    <h2>#usesnitap por aí</h2>
+  </header>
 
-    <section class="gallery">
-      <header>
-        <span>GALERIA DE FOTOS</span>
-        <h2>#usesnitap por aí</h2>
-      </header>
+  <!-- Conteúdo da galeria -->
+  <div class="content">
 
-      <div class="content">
-        <figure>
-          <img src="assets/images/01.png" alt="" />
-          <figcaption>
-            <img src="assets/images/person.png" alt="" />
-            <span>@laviniapereira</span>
-          </figcaption>
-        </figure>
+    <!-- Item da galeria -->
+    <figure>
+      <img src="assets/images/01.png" alt="" />
+      <figcaption>
+        <img src="assets/images/person.png" alt="" />
+        <span>@laviniapereira</span>
+      </figcaption>
+    </figure>
 
-        <figure data-delay>
-          <img src="assets/images/02.png" alt="" />
-          <figcaption>
-            <img src="assets/images/person.png" alt="" />
-            <span>@laviniapereira</span>
-          </figcaption>
-        </figure>
+    <figure data-delay>
+      <img src="assets/images/02.png" alt="" />
+      <figcaption>
+        <img src="assets/images/person.png" alt="" />
+        <span>@laviniapereira</span>
+      </figcaption>
+    </figure>
 
-        <figure>
-          <img src="assets/images/03.png" alt="" />
-          <figcaption>
-            <img src="assets/images/person.png" alt="" />
-            <span>@laviniapereira</span>
-          </figcaption>
-        </figure>
+    <figure>
+      <img src="assets/images/03.png" alt="" />
+      <figcaption>
+        <img src="assets/images/person.png" alt="" />
+        <span>@laviniapereira</span>
+      </figcaption>
+    </figure>
 
-        <figure data-delay>
-          <img src="assets/images/04.png" alt="" />
-          <figcaption>
-            <img src="assets/images/person.png" alt="" />
-            <span>@laviniapereira</span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
+    <figure data-delay>
+      <img src="assets/images/04.png" alt="" />
+      <figcaption>
+        <img src="assets/images/person.png" alt="" />
+        <span>@laviniapereira</span>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- =========================
+     FOOTER / RODAPÉ
+========================= -->
+<footer>
+
+  <!-- Logo no rodapé -->
+  <div class="logo">
+    <img src="assets/logo.svg" alt="" />
+    Snitap
+  </div>
+
+  <!-- Navegação institucional -->
+  <nav>
+    <a href="#">Sobre</a>
+    <a href="#">Nossas lojas</a>
+    <a href="#">Política de privacidade</a>
+  </nav>
+
+  <!-- Redes sociais -->
+  <div class="social-links">
+    <a href="#" title="instagram">
+      <img src="assets/icons/instagram.svg" alt="" />
+    </a>
+    <a href="#" title="facebook">
+      <img src="assets/icons/facebook.svg" alt="" />
+    </a>
+    <a href="#" title="youtube">
+      <img src="assets/icons/youtube.svg" alt="" />
+    </a>
+    <a href="#" title="tiktok">
+      <img src="assets/icons/tiktok.svg" alt="" />
+    </a>
+  </div>
+
+</footer>
+
   </body>
 </html>

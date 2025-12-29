@@ -1,40 +1,62 @@
+/* =====================================================
+   BANNER / MARQUEE
+   Faixa animada com gradiente + rolagem contínua
+===================================================== */
 .banner {
   width: 100%;
-  padding-block: 2.5rem;
-  overflow: hidden;
+  padding-block: 2.5rem;     /* Espaço vertical da seção */
+  overflow: hidden;          /* Evita scroll horizontal por causa das animações */
 
+  /* -----------------------------
+     "Janela" do banner (clip)
+  ----------------------------- */
   .scroller {
     width: 100%;
-    overflow: hidden;
-    padding-block: 1rem;
+    overflow: hidden;        /* Corta o que passa da área visível */
+    padding-block: 1rem;     /* Altura/respiração do banner */
   }
 
+  /* -----------------------------
+     Container que "anda" (marquee)
+  ----------------------------- */
   .rolling {
-    display: flex;
-    gap: 1.5rem;
+    display: flex;           /* Itens em linha */
+    gap: 1.5rem;             /* Espaçamento entre repetição do banner */
 
-    animation: rolling 2s linear infinite;
+    animation: rolling 2s linear infinite; /* Move para a esquerda em loop */
   }
 
+  /* -----------------------------
+     Fundo com gradiente animado
+     (classe aplicada no scroller)
+  ----------------------------- */
   .bg-gradient-animate {
     background: linear-gradient(
       45deg,
       var(--snitap-sky-light),
       var(--snitap-joy-light)
     );
-    background-size: 400%;
-    background-position: 0 50%;
+    background-size: 400%;       /* “zoom” no gradiente pra ter movimento */
+    background-position: 0 50%;  /* Ponto inicial do gradiente */
 
-    animation: bg-gradient 20s ease infinite;
+    animation: bg-gradient 20s ease infinite; /* Anima o fundo devagar */
   }
 }
 
+/* =====================================================
+   ANIMAÇÃO: GRADIENTE EM MOVIMENTO
+   Faz o fundo "viajar" horizontalmente
+===================================================== */
 @keyframes bg-gradient {
   50% {
     background-position: 100% 50%;
   }
 }
 
+/* =====================================================
+   ANIMAÇÃO: ROLAGEM DO BANNER (MARQUEE)
+   Move o bloco .rolling para a esquerda
+===================================================== */
 @keyframes rolling {
   to {
     transform: translateX(-132px);

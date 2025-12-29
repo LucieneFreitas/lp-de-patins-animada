@@ -1,9 +1,16 @@
+/* =====================================================
+   GALLERY SECTION
+   Grid de imagens + animações e hover
+===================================================== */
 section.gallery {
   width: 100%;
-  max-width: 80rem;
-  padding: 2.5rem 2rem;
-  margin-inline: auto;
+  max-width: 80rem;              /* Largura máxima da galeria */
+  padding: 2.5rem 2rem;          /* Espaçamento interno */
+  margin-inline: auto;           /* Centralização */
 
+  /* -----------------------------
+     Cabeçalho da galeria
+  ----------------------------- */
   & header {
     text-align: center;
   }
@@ -12,68 +19,73 @@ section.gallery {
     font: 500 var(--text-sm) / 1.5 var(--ff-base);
   }
 
+  /* Imagens responsivas */
   & img {
     width: 100%;
     height: auto;
   }
 
+  /* -----------------------------
+     Grid de imagens
+  ----------------------------- */
   & .content {
     margin-top: 2rem;
+
     display: grid;
     grid-template-areas:
       'A B B'
-      'C C D';
+      'C C D';                   /* Layout assimétrico */
 
     gap: 2.5rem;
   }
 
+  /* -----------------------------
+     Card da imagem (figure)
+  ----------------------------- */
   & figure {
     position: relative;
     border-radius: 2.5rem;
     overflow: hidden;
-    line-height: 0;
+    line-height: 0;              /* Remove espaços indesejados */
 
+    /* Animação ao entrar no viewport */
     animation: image-appear linear backwards;
     animation-timeline: view();
     animation-range: 100px 300px;
 
+    /* Delay customizado via atributo */
     &[data-delay] {
       animation-range: 150px 350px;
     }
 
+    /* Imagem principal */
     & > img {
       height: 25rem;
       object-fit: cover;
       transition: scale 500ms;
     }
 
+    /* Interação de hover */
     &:hover {
       & > img {
-        scale: 1.1;
+        scale: 1.1;              /* Zoom suave */
       }
 
       figcaption {
-        transform: translateY(0);
+        transform: translateY(0); /* Revela legenda */
       }
     }
 
-    &:nth-child(1) {
-      grid-area: A;
-    }
-
-    &:nth-child(2) {
-      grid-area: B;
-    }
-
-    &:nth-child(3) {
-      grid-area: C;
-    }
-
-    &:nth-child(4) {
-      grid-area: D;
-    }
+    /* Mapeamento do grid */
+    &:nth-child(1) { grid-area: A; }
+    &:nth-child(2) { grid-area: B; }
+    &:nth-child(3) { grid-area: C; }
+    &:nth-child(4) { grid-area: D; }
   }
 
+  /* -----------------------------
+     Legenda da imagem (overlay)
+  ----------------------------- */
   & figcaption {
     display: flex;
     align-items: center;
@@ -89,11 +101,17 @@ section.gallery {
 
     padding: 1.5rem 2rem;
 
-    transform: translateY(100%);
+    transform: translateY(100%); /* Escondida por padrão */
     transition: transform 500ms;
 
-    background: linear-gradient(to top, rgb(0 0 0 / 0.64), rgb(0 0 0 / 0));
+    /* Gradiente para legibilidade do texto */
+    background: linear-gradient(
+      to top,
+      rgb(0 0 0 / 0.64),
+      rgb(0 0 0 / 0)
+    );
 
+    /* Avatar do usuário */
     & > img {
       width: 2rem;
       aspect-ratio: 1/1;
@@ -103,6 +121,9 @@ section.gallery {
   }
 }
 
+/* =====================================================
+   ANIMAÇÃO: APARECER AO SCROLL
+===================================================== */
 @keyframes image-appear {
   from {
     opacity: 0;

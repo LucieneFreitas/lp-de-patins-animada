@@ -1,49 +1,60 @@
+/* =====================================================
+   HERO SECTION
+   Estrutura principal do destaque da página
+===================================================== */
 section.hero {
-  max-width: 80rem;
+  max-width: 80rem;              /* Largura máxima do hero */
   width: 100%;
-  padding: 2.5rem 2rem;
-  margin-inline: auto;
+  padding: 2.5rem 2rem;          /* Espaçamento interno */
+  margin-inline: auto;           /* Centraliza horizontalmente */
 
-  display: flex;
-  align-items: center;
+  display: flex;                 /* Layout em duas colunas */
+  align-items: center;           /* Alinha verticalmente */
   justify-content: space-between;
-  overflow: hidden;
+  overflow: hidden;              /* Esconde animações fora da área */
 
+  /* -----------------------------
+     Título principal
+  ----------------------------- */
   & h1 {
-    max-width: 40rem;
+    max-width: 40rem;             /* Limita largura do texto */
   }
 
+  /* Container das palavras animadas */
   & h1 div {
     display: inline-block;
-    overflow: hidden;
-    height: 5rem;
+    overflow: hidden;             /* Esconde palavras fora da área visível */
+    height: 5rem;                 /* Altura fixa para o slide vertical */
     width: min-content;
     vertical-align: bottom;
   }
 
+  /* Cores individuais das palavras */
   & h1 span:nth-child(1),
   & h1 span:nth-child(4) {
-    color: var(--snitap-sky-mid);
+    color: var(--snitap-sky-mid); /* radical */
   }
 
   & h1 span:nth-child(2) {
-    color: var(--snitap-joy-mid);
+    color: var(--snitap-joy-mid); /* divertida */
   }
 
   & h1 span:nth-child(3) {
-    color: var(--snitap-leaf-mid);
+    color: var(--snitap-leaf-mid); /* saudável */
   }
 
+  /* Configuração da animação das palavras */
   & h1 span {
-    display: block;
-
+    display: block;               /* Cada palavra ocupa uma linha */
     animation: slideUp 5s 2s infinite ease;
   }
 
-  /* buttons */
+  /* -----------------------------
+     BOTÕES (CTAs)
+  ----------------------------- */
   & .buttons {
     display: flex;
-    gap: 2rem;
+    gap: 2rem;                    /* Espaço entre botões */
     margin-top: 3rem;
 
     & .button {
@@ -51,15 +62,16 @@ section.hero {
       align-items: center;
       gap: 0.75rem;
 
-      border-radius: 5rem;
+      border-radius: 5rem;        /* Botões arredondados */
+      transition: scale 350ms;    /* Efeito de hover suave */
 
-      transition: scale 350ms;
-
+      /* Botão comprar */
       &.buy {
         padding: 1.5rem 3rem;
         background-color: var(--snitap-sun);
       }
 
+      /* Botão play */
       &.play span {
         padding: 1.5rem;
         border-radius: 50%;
@@ -67,35 +79,45 @@ section.hero {
         display: flex;
       }
 
+      /* Interação de hover */
       &:hover {
         scale: 1.1;
       }
     }
 
+    /* Sombra reutilizável */
     & .shadow {
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1), 0 9px 9px rgb(0 0 0 / 0.09),
-        0 20px 12px rgb(0 0 0 / 0.05), 0 36px 15px rgb(0 0 0 / 0.01);
+      box-shadow:
+        0 2px 5px rgb(0 0 0 / 0.1),
+        0 9px 9px rgb(0 0 0 / 0.09),
+        0 20px 12px rgb(0 0 0 / 0.05),
+        0 36px 15px rgb(0 0 0 / 0.01);
     }
   }
 
-  /* patins */
+  /* -----------------------------
+     HERO VISUAL (PATINS)
+  ----------------------------- */
   & > div:nth-child(2) {
     display: block;
     width: 100%;
     max-width: 30.5rem;
     height: 30.5rem;
 
+    /* Container relativo para imagens absolutas */
     & .content {
       width: 100%;
       height: 100%;
       position: relative;
     }
 
+    /* Configuração base das imagens */
     & img {
       position: absolute;
       width: 100%;
     }
 
+    /* Elipse de fundo */
     & img[src*='ellipse'] {
       width: 94%;
       top: 3%;
@@ -105,6 +127,7 @@ section.hero {
       animation: slideIn 3s 200ms ease forwards;
     }
 
+    /* Imagem principal (patins) */
     & img[src*='patins'] {
       z-index: 1;
 
@@ -112,6 +135,7 @@ section.hero {
       animation: slideIn 3s ease forwards;
     }
 
+    /* Estrelas grandes */
     & img[src*='stars-1'] {
       max-width: 5.5rem;
       top: 30%;
@@ -119,9 +143,12 @@ section.hero {
 
       opacity: 0;
       transform: translateX(400%);
-      animation: slideIn 2s 800ms ease forwards, appear 100ms 800ms forwards;
+      animation:
+        slideIn 2s 800ms ease forwards,
+        appear 100ms 800ms forwards;
     }
 
+    /* Estrelas pequenas */
     & img[src*='stars-2'] {
       max-width: 2.5rem;
       right: 0;
@@ -133,6 +160,11 @@ section.hero {
   }
 }
 
+/* =====================================================
+   ANIMAÇÕES
+===================================================== */
+
+/* Entrada horizontal suave (bounce leve) */
 @keyframes slideIn {
   50% {
     transform: translateX(-20px);
@@ -143,81 +175,50 @@ section.hero {
   }
 }
 
+/* Fade-in simples */
 @keyframes appear {
   to {
     opacity: 1;
   }
 }
 
+/* Animação vertical das palavras do título */
 @keyframes slideUp {
-  /* radical static */
+  /* Palavra 1: radical (inicial) */
   0%,
   22% {
     transform: translateY(0);
   }
 
-  /* divertida in */
-  23% {
-    transform: translateY(calc(-5rem - 15px));
-  }
+  /* Palavra 2: divertida (entrada com bounce) */
+  23% { transform: translateY(calc(-5rem - 15px)); }
+  25% { transform: translateY(calc(-5rem + 10px)); }
+  27% { transform: translateY(calc(-5rem - 5px)); }
+  29% { transform: translateY(calc(-5rem + 5px)); }
 
-  25% {
-    transform: translateY(calc(-5rem + 10px));
-  }
-
-  27% {
-    transform: translateY(calc(-5rem - 5px));
-  }
-
-  29% {
-    transform: translateY(calc(-5rem + 5px));
-  }
-
-  /* divertida static */
+  /* divertida parada */
   33%,
   55% {
     transform: translateY(-5rem);
   }
 
-  /* saudável in */
-  56% {
-    transform: translateY(calc(-10rem - 15px));
-  }
+  /* Palavra 3: saudável */
+  56% { transform: translateY(calc(-10rem - 15px)); }
+  58% { transform: translateY(calc(-10rem + 10px)); }
+  60% { transform: translateY(calc(-10rem - 5px)); }
+  62% { transform: translateY(calc(-10rem + 5px)); }
 
-  58% {
-    transform: translateY(calc(-10rem + 10px));
-  }
-
-  60% {
-    transform: translateY(calc(-10rem - 5px));
-  }
-
-  62% {
-    transform: translateY(calc(-10rem + 5px));
-  }
-
-  /* saudável static */
+  /* saudável parada */
   66%,
   88% {
     transform: translateY(-10rem);
   }
 
-  /* radical in */
-  89% {
-    transform: translateY(calc(-15rem - 15px));
-  }
-
-  91% {
-    transform: translateY(calc(-15rem + 10px));
-  }
-
-  93% {
-    transform: translateY(calc(-15rem - 5px));
-  }
-
-  95% {
-    transform: translateY(calc(-15rem + 5px));
-  }
+  /* Palavra 4: radical (loop final) */
+  89% { transform: translateY(calc(-15rem - 15px)); }
+  91% { transform: translateY(calc(-15rem + 10px)); }
+  93% { transform: translateY(calc(-15rem - 5px)); }
+  95% { transform: translateY(calc(-15rem + 5px)); }
 
   100% {
     transform: translateY(-15rem);
