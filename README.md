@@ -36,7 +36,7 @@ Os principais objetivos deste projeto foram:
 ## 📷 Demonstração
 
 <p align="center">
-    <img alt="Preview do projeto" title="LP de Patins Animada" src="./assets/patins.png" />
+    <img alt="Preview do projeto" title="LP de Patins Animada" src="./assets/imagens/patins.png" />
 </p>
 
 🔗 **Preview online:**  
